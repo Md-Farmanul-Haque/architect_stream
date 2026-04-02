@@ -1,4 +1,3 @@
-```markdown
 # Architect-Stream: Local RAG Technical Mentor
 
 An end-to-end Retrieval-Augmented Generation (RAG) application that acts as an automated technical mentor. Architect-Stream allows users to upload technical PDFs, intelligently parses the information, and enables interactive, context-aware "interviews" regarding the document's content—all running entirely locally without external API dependencies.
