@@ -1,0 +1,52 @@
+# =========================
+# Python & Environments
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+Lib/
+Scripts/
+
+# =========================
+# Environment Variables
+# =========================
+# Never commit your .env file, even if you are just using local Ollama right now.
+.env
+
+# =========================
+# VS Code Settings
+# =========================
+.vscode/
+
+# =========================
+# Streamlit
+# =========================
+# Ignore Streamlit secrets if you add API keys later for deployment
+.streamlit/secrets.toml
+
+# =========================
+# ChromaDB (Vector Database)
+# =========================
+# Vector databases get massive quickly. Do not push them to GitHub.
+chroma_db/
+db/
+vector_store/
+*.sqlite3
+*.parquet
+
+# =========================
+# Project Data & Uploads
+# =========================
+# Prevent user-uploaded technical PDFs from being committed
+uploads/
+data/
+*.pdf
+
+# =========================
+# OS Generated Files
+# =========================
+.DS_Store
+Thumbs.db
