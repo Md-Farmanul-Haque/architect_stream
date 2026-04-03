@@ -41,7 +41,7 @@ vector_store/
 # Project Data & Uploads
 # =========================
 # Prevent user-uploaded technical PDFs from being committed
-uploads/
+documents/
 data/
 *.pdf
 
