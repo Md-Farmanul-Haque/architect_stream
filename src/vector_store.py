@@ -53,7 +53,7 @@ if __name__ == "__main__":
 
         #step3: Perform semantic search test
         print("\t\t\tStep 3: Testing Semantic Retrieval")
-        test_query = "Who is Lord Shiva?"
+        test_query = "Who is Nandi?"
         print(f"User: {test_query}")
 
 
