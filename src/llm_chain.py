@@ -4,12 +4,12 @@ from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 
 
-from vector_store import get_vector_store
+from src.vector_store import get_vector_store
 
 LLM_MODEL = "llama3"
 
 def get_llm():
-    return ChatOllama(model=LLM_MODEL, temparature=0.8) # temparature maintains factual correctness
+    return ChatOllama(model=LLM_MODEL, temperature=0.8) # temparature maintains factual correctness
 
 
 def format_docs(docs):
