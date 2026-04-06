@@ -8,8 +8,9 @@ from langchain_core.documents import Document
 #Global configuration and constants 
 CHUNK_SIZE: int = 1000
 CHUNK_OVERLAP: int = 200
+CURR_DIR: str = os.path.dirname(os.path.abspath(__file__))
 FILE_NAME: str = "Meluha_One.pdf"
-FILE_PATH: str = r"..\documents\Meluha_One.pdf"
+FILE_PATH: str = os.path.join(CURR_DIR, "..", "documents", FILE_NAME)
 
 # validating and loading document
 def validate_load_doc(file_path: str, file_name: str) -> List[Document]:
