@@ -5,7 +5,7 @@ from langchain_chroma import Chroma
 from langchain_ollama import OllamaEmbeddings 
 from langchain_core.documents import Document
 
-from document_loader import process_pdf, FILE_PATH, FILE_NAME
+from src.document_loader import process_pdf, FILE_PATH, FILE_NAME
 
 FILE_PATH = FILE_PATH
 DB_PATH = r"../chroma_db/"
