@@ -9,7 +9,8 @@ from src.vector_store import get_vector_store
 LLM_MODEL = "llama3"
 
 def get_llm():
-    return ChatOllama(model=LLM_MODEL, temperature=0.8) # temparature maintains factual correctness
+    ollama_url = os.environ.get("OLLAMA_BASE_URL", "https://localhost:11434")
+    return ChatOllama(model=LLM_MODEL, temperature=0.8, base_url=ollama_url) # temparature maintains factual correctness
 
 
 def format_docs(docs):

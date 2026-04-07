@@ -13,7 +13,8 @@ DB_PATH = r"../chroma_db/"
 EMBEDDING_MODEL: str = "nomic-embed-text"
 
 def create_embeddings() -> OllamaEmbeddings:
-    return OllamaEmbeddings(model=EMBEDDING_MODEL)
+    ollama_url = os.environ.get("OLLAMA_BASE_URL", "https://localhost:11434")
+    return OllamaEmbeddings(model=EMBEDDING_MODEL, base_url=ollama_url)
 
 def create_vector_db(chunks: List[Document], persist_directory: str=DB_PATH) -> Chroma:
     print(f"Initializing ChromaDB at: {persist_directory}...")
