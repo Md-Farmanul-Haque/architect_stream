@@ -1,4 +1,6 @@
 # Architect-Stream: Local RAG Technical Mentor
+![Architect-Stream Demo](https://github.com/user-attachments/assets/c3afbd23-225e-4e6b-8341-ff051719a497)
+*A local, zero-hallucination RAG pipeline answering technical queries using Llama 3.*
 
 An end-to-end Retrieval-Augmented Generation (RAG) application that acts as an automated technical mentor. Architect-Stream allows users to upload technical PDFs, intelligently parses the information, and enables interactive, context-aware "interviews" regarding the document's content—all running entirely locally without external API dependencies.
 
@@ -26,17 +28,21 @@ Building this project solidified my understanding of modern AI/ML application ar
 * **Frontend:** Streamlit
 
 ## System Architecture & Workflow
-1. **Upload:** User provides a technical PDF through the Streamlit interface.
-2. **Ingestion & Chunking (`document_loader.py`):** `PyPDFLoader` extracts text; the recursive text splitter slices it into manageable, token-optimized chunks (1000 chars, 200 overlap).
-3. **Embedding & Storage (`vector_store.py`):** Text chunks are converted into mathematical vectors using `nomic-embed-text` and stored locally in a persistent ChromaDB directory.
-4. **Retrieval:** When a user submits a query, the system performs a semantic similarity search against ChromaDB to retrieve the most mathematically relevant document chunks.
-5. **Generation (`llm_chain.py`):** The retrieved context and user query are injected into a strict prompt template and sent to the local `llama3` model, generating an accurate, hallucination-free response.
+
+```mermaid
+graph TD;
+    A[User Uploads PDF] -->|Streamlit UI| B(document_loader.py);
+    B -->|PyPDFLoader + Recursive Splitter| C{Text Chunks};
+    C -->|nomic-embed-text| D[(ChromaDB Local Vector Store)];
+    E[User Queries System] -->|Streamlit UI| F(vector_store.py);
+    F -->|Semantic Search| D;
+    D -->|Retrieve Relevant Context| G(llm_chain.py);
+    G -->|Prompt Template + Context| H[Llama 3 Local Model];
+    H -->|Generate Response| I[Streamlit Chat Interface];
+```
 
 ## Repository Structure
-```text
-## Repository Structure
-
-```text
+```
 
 Architect-Stream/
 
